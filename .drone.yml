@@ -32,13 +32,9 @@ steps:
         from_secret: plugin_repo
       dockerfile: Dockerfile
       registry: https://registry.spawnlab.dev
-    when:
-      branch:
-        - pmishra/github_action
-      event: [ tag, push ]
 trigger:
   branch:
-    - pmishra/github_action
+    - pmishra/**
   event:
     - push
 
