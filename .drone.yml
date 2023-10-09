@@ -33,3 +33,29 @@ steps:
       dockerfile: Dockerfile
     when:
       event: [ tag, push ]
+trigger:
+  branch:
+    - pmishra/github_action
+  event:
+    - push
+
+---
+kind: secret
+name: docker_username
+get:
+  path: drone/data/common/registry
+  name: username
+
+---
+kind: secret
+name: docker_password
+get:
+  path: drone/data/common/registry
+  name: password
+
+---
+kind: secret
+name: plugin_repo
+get:
+  path: drone/data/common/registry
+  name: plugin_repo
