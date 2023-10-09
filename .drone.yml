@@ -23,8 +23,8 @@ steps:
   - name: publish_linux_amd64
     image: plugins/docker
     settings:
-      auto_tag: true
-      debug: true
+      tags:
+        - latest
       username:
         from_secret: docker_username
       password:
