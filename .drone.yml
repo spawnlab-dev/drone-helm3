@@ -31,6 +31,7 @@ steps:
       repo:
         from_secret: plugin_repo
       dockerfile: Dockerfile
+      registry: https://registry.spawnlab.dev
     when:
       event: [ tag, push ]
 trigger:
