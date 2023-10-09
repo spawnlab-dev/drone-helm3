@@ -23,8 +23,6 @@ steps:
   - name: publish_linux_amd64
     image: plugins/docker
     settings:
-      privileged: true
-      debug: true
       tags:
         - latest
       username:
