@@ -33,6 +33,8 @@ steps:
       dockerfile: Dockerfile
       registry: https://registry.spawnlab.dev
     when:
+      branch:
+        - pmishra/github_action
       event: [ tag, push ]
 trigger:
   branch:
