@@ -21,6 +21,10 @@ inputs:
     description: "Generate debug output within drone-helm3 and pass `--debug` to all helm commands. Use with care, since the debug output may include secrets."
     required: false
     default: "false"
+  skip_kubeconfig:
+    description: "Skip kubeconfig creation default `false`. If set `true` k8s api point to localhost."
+    required: false
+    default: "false"
   skip_tls_verify:
     description: "Connect to the Kubernetes cluster without checking for a valid TLS certificate. Not recommended in production. This is ignored if `skip_kubeconfig` is `true`."
     required: false
@@ -48,6 +52,7 @@ runs:
     - ${{ inputs.namespace }}
     - ${{ inputs.values }}
     - ${{ inputs.debug }}
+    - ${{ inputs.skip_kubeconfig }}
     - ${{ inputs.skip_tls_verify }}
     - ${{ inputs.kube_certificate }}
     - ${{ inputs.kube_api_server }}
