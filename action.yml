@@ -29,16 +29,16 @@ inputs:
     description: "Connect to the Kubernetes cluster without checking for a valid TLS certificate. Not recommended in production. This is ignored if `skip_kubeconfig` is `true`."
     required: false
     default: "false"
-  kube_certificate:
+  kubernetes_certificate:
     description: "Base64 encoded TLS certificate used by the Kubernetes cluster's certificate authority. This is ignored if `skip_kubeconfig` is `true`."
     required: false
-  kube_api_server:
+  api_server:
     description: "API endpoint for the Kubernetes cluster. This is ignored if `skip_kubeconfig` is `true`."
     required: false
-  kube_token:
+  kubernetes_token:
     description: "Token for authenticating to Kubernetes. This is ignored if `skip_kubeconfig` is `true`."
     required: false
-  kube_service_account:
+  service_account:
     description: "Service account for authenticating to Kubernetes. Default is `helm`. This is ignored if `skip_kubeconfig` is `true`."
     required: false
 
@@ -54,7 +54,7 @@ runs:
     - ${{ inputs.debug }}
     - ${{ inputs.skip_kubeconfig }}
     - ${{ inputs.skip_tls_verify }}
-    - ${{ inputs.kube_certificate }}
-    - ${{ inputs.kube_api_server }}
-    - ${{ inputs.kube_token }}
-    - ${{ inputs.kube_service_account }}
+    - ${{ inputs.kubernetes_certificate }}
+    - ${{ inputs.api_server }}
+    - ${{ inputs.kubernetes_token }}
+    - ${{ inputs.service_account }}
