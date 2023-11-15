@@ -94,7 +94,7 @@ func NewConfig(stdout, stderr io.Writer) (*Config, error) {
 		Stderr: stderr,
 	}
 
-	fmt.Fprintf(cfg.Stdout, "Conifg vaules api server %s \n", cfg.APIServer)
+	fmt.Fprintf(cfg.Stdout, "Conifg vaules api server %s  %s\n", cfg.APIServer, os.Getenv("INPUT_API_SERVER"))
 
 	if err := envconfig.Process(prefix, &cfg); err != nil {
 		return nil, err

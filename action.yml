@@ -35,6 +35,7 @@ inputs:
   api_server:
     description: "API endpoint for the Kubernetes cluster. This is ignored if `skip_kubeconfig` is `true`."
     required: false
+    default: "test"
   kubernetes_token:
     description: "Token for authenticating to Kubernetes. This is ignored if `skip_kubeconfig` is `true`."
     required: false
