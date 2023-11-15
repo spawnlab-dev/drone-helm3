@@ -48,7 +48,7 @@ func NewInitKube(cfg env.Config, templateFile, configFile string) *InitKube {
 // Execute generates a kubernetes config file from drone-helm3's template.
 func (i *InitKube) Execute() error {
 	if i.debug {
-		fmt.Fprintf(i.stderr, "writing kubeconfig file to %s\n", i.configFilename)
+		fmt.Fprintf(i.stderr, "writing kubeconfig file to %s\n %v", i.configFilename, i.values)
 	}
 	defer i.configFile.Close()
 	return i.template.Execute(i.configFile, i.values)
