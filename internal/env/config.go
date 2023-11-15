@@ -93,6 +93,9 @@ func NewConfig(stdout, stderr io.Writer) (*Config, error) {
 		Stdout: stdout,
 		Stderr: stderr,
 	}
+
+	fmt.Fprintf(cfg.Stdout, "Conifg vaules %v \n", cfg)
+
 	if err := envconfig.Process(prefix, &cfg); err != nil {
 		return nil, err
 	}
