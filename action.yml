@@ -29,6 +29,18 @@ inputs:
     description: "Connect to the Kubernetes cluster without checking for a valid TLS certificate. Not recommended in production. This is ignored if `skip_kubeconfig` is `true`."
     required: false
     default: "false"
+  kube_api_server:
+    description: "The Kubernetes cluster's API endpoint"
+    required: false
+  kube_service_account:
+    description: "Account to use for connecting to the Kubernetes cluster"
+    required: false
+  kube_certificate:
+    description: "K8S certificate"
+    required: false
+  kube_token:
+    description: "K8S auth token"
+    required: false
 
 runs:
   using: 'docker'
@@ -42,3 +54,7 @@ runs:
     - ${{ inputs.debug }}
     - ${{ inputs.skip_kubeconfig }}
     - ${{ inputs.skip_tls_verify }}
+    - ${{ inputs.kube_api_server }}
+    - ${{ inputs.kube_service_account }}
+    - ${{ inputs.kube_certificate }}
+    - ${{ inputs.kube_token }}
