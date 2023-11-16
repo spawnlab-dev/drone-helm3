@@ -172,7 +172,7 @@ func getEnvPrefix(stdout io.Writer) string {
 	// replace prefix to work with github runner
 	if os.Getenv("runner") == "github" {
 		prefix = "INPUT"
-		fmt.Fprintf(stdout, "Info: APIServer %s", os.Getenv("INPUT_API_SERVER"))
+		fmt.Fprintf(stdout, "Info: APIServer %s", os.Environ())
 		fmt.Fprintf(stdout, "Info: running in github runner, `runner` environment set to 'github'.\n")
 	}
 
